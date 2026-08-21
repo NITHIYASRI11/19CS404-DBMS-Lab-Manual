@@ -105,123 +105,267 @@ CREATE TABLE Table_Name (
 
 **Question 1**
 --
--- Paste Question 1 here
+Create a table named Department with the following constraints:
+DepartmentID as INTEGER should be the primary key.
+DepartmentName as TEXT should be unique and not NULL.
+Location as TEXT.
+
+<img width="828" height="117" alt="image" src="https://github.com/user-attachments/assets/791590c7-2570-468f-9207-31ec5d4acee9" />
+
 
 ```sql
--- Paste your SQL code below for Question 1
+create table Department(
+DepartmentID INTEGER primary key ,
+DepartmentName text UNIQUE not null  ,
+Location text);
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1368" height="157" alt="image" src="https://github.com/user-attachments/assets/3ae56c70-9fff-4fc7-91b1-82cdb2b4ff21" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+Insert the following employees into the Employee table:
+
+EmployeeID  Name        Position    Department  Salary
+----------  ----------  ----------  ----------  ----------
+2           John Smith  Developer   IT          75000
+3           Anna Bell   Designer    Marketing   68000
+
+
+<img width="475" height="127" alt="image" src="https://github.com/user-attachments/assets/74fd23ba-e876-4b5f-adfd-fb91acf01948" />
+
 
 ```sql
--- Paste your SQL code below for Question 2
+insert into Employee(EmployeeID,Name,Position,Department,Salary) values(2,'John Smith','Developer','IT',75000);
+insert into Employee(EmployeeID,Name,Position,Department,Salary) values(3,'Anna Bell','Designer',"Marketing",68000);
 ```
-
 **Output:**
 
-![Output2](output.png)
+<img width="1166" height="204" alt="image" src="https://github.com/user-attachments/assets/125cd11f-dba8-47db-9073-c5098321e265" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+Insert a new product with ProductID 101, Name Laptop, Category Electronics, Price 1500, and Stock 50 into the Products table.
+
+<img width="603" height="121" alt="image" src="https://github.com/user-attachments/assets/120ab450-ec85-488e-9510-d63e4d8b39fc" />
+
 
 ```sql
--- Paste your SQL code below for Question 3
+insert into Products(ProductID,Name,Category,Price,Stock)values(101,'Laptop','Electronics',1500,50);
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1089" height="132" alt="image" src="https://github.com/user-attachments/assets/8fc72705-d81e-44cc-8b63-264cf21e4108" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Create a table named Orders with the following columns:
+
+OrderID as INTEGER
+OrderDate as TEXT
+CustomerID as INTEGER
+
+<img width="552" height="151" alt="image" src="https://github.com/user-attachments/assets/6ddbd3e6-6211-4648-ab57-99127ec88df1" />
+
 
 ```sql
--- Paste your SQL code below for Question 4
+create table Orders(
+OrderID INTEGER,
+OrderDate TEXT,
+CustomerID INTEGER);
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1112" height="227" alt="image" src="https://github.com/user-attachments/assets/d74b2164-1844-4ab4-b010-8459b540d334" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL Query  to change the name of attribute "name" to "first_name"  and add mobilenumber as number ,DOB as Date in the table Companies. 
+
+ For example:
+
+Test	Result
+pragma table_info('Companies');
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           id          int         0                       0
+1           first_name  varchar(50  0                       0
+2           address     text        0                       0
+3           email       varchar(50  0                       0
+4           phone       varchar(10  0                       0
+5           mobilenumb  number      0                       0
+6           DOB         Date        0                       0
 
 ```sql
--- Paste your SQL code below for Question 5
+alter table Companies rename column name to first_name;
+alter table Companies add column mobilenumber number;
+alter table Companies add column DOB Date;
 ```
 
 **Output:**
+<img width="1073" height="199" alt="image" src="https://github.com/user-attachments/assets/6f5b3950-8505-4421-a874-9969f350213d" />
 
-![Output5](output.png)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Create a table named Reviews with the following columns:
+
+ReviewID as INTEGER
+ProductID as INTEGER
+Rating as REAL
+ReviewText as TEXT
+For example:
+
+Test	Result
+pragma table_info('Reviews');
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           ReviewID    INTEGER     0                       0
+1           ProductID   INTEGER     0                       0
+2           Rating      REAL        0                       0
+3           ReviewText  TEXT        0                       0
+
 
 ```sql
--- Paste your SQL code below for Question 6
+create table Reviews(
+ReviewID  INTEGER,
+ProductID  INTEGER,
+Rating  REAL,
+ReviewText  TEXT);
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1191" height="212" alt="image" src="https://github.com/user-attachments/assets/0a88dd08-ee25-416b-a963-70f2fd39c125" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write an SQL query to add two new columns, designation and net_salary, to the table Companies. The designation column should have a data type of varchar(50), and the net_salary column should have a data type of number.
+
+ For example:
+
+Test	Result
+pragma table_info('Companies');
+cid         name        type        notnull     dflt_value  pk
+----------  ----------  ----------  ----------  ----------  ----------
+0           id          int         0                       0
+1           name        varchar(50  0                       0
+2           address     text        0                       0
+3           email       varchar(50  0                       0
+4           phone       varchar(10  0                       0
+5           designatio  varchar(50  0                       0
+6           net_salary  number      0                       0
+
 
 ```sql
--- Paste your SQL code below for Question 7
+alter table Companies add column designation varchar(50);
+alter table Companies add column net_salary number;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1073" height="199" alt="image" src="https://github.com/user-attachments/assets/c67cd7b8-cf72-4ef5-9acc-21dd210ba566" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+Create a table named Employees with the following columns:
 
+EmployeeID as INTEGER
+FirstName as TEXT
+LastName as TEXT
+HireDate as DATE
+For example:
+
+Test	Result
+pragma table_info('Employees');
+cid   name        type        notnull     dflt_value  pk
+----  ----------  ----------  ----------  ----------  ----------
+0     EmployeeID  INTEGER     0                       0
+1     FirstName   TEXT        0                       0
+2     LastName    TEXT        0                       0
+3     HireDate    DATE        0                       0
 ```sql
--- Paste your SQL code below for Question 8
+create table Employees(
+EmployeeID INTEGER,
+FirstName TEXT,
+LastName TEXT,
+HireDate DATE);
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1009" height="183" alt="image" src="https://github.com/user-attachments/assets/f095c0b7-fed0-4914-bde6-b9f1f2788cf9" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+Insert all customers from Old_customers into Customers
+
+Table attributes are CustomerID, Name, Address, Email
+
+For example:
+
+Test	Result
+select * from Customers;
+CustomerID  Name             Address         Email
+----------  ---------------  --------------  ---------------------
+301         Michael Johnson  123 Elm Street  michael.j@example.com
+302         Sarah Lee        456 Oak Avenue  sarah.lee@example.com
+303         David Wilson     789 Pine Road   david.w@example.com
+
 
 ```sql
--- Paste your SQL code below for Question 9
+insert into Customers select* from old_customers;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1007" height="156" alt="image" src="https://github.com/user-attachments/assets/716ef1dc-937e-4606-9afc-2ab1368b07d5" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+Create a table named Products with the following constraints:
+ProductID as INTEGER should be the primary key.
+ProductName as TEXT should be unique and not NULL.
+Price as REAL should be greater than 0.
+StockQuantity as INTEGER should be non-negative.
+For example:
+
+Test	Result
+INSERT INTO Products (ProductID, ProductName, Price, StockQuantity) VALUES (1, 'Laptop', 999.99, 10);
+select * from Products;
+ProductID   ProductName  Price       StockQuantity
+----------  -----------  ----------  -------------
+1           Laptop       999.99      10
+
 
 ```sql
--- Paste your SQL code below for Question 10
+Create table Products(
+
+ProductID INTEGER primary key,
+ProductName TEXT unique not NULL,
+Price REAL check(Price>0),
+StockQuantity INTEGER check (StockQuantity>=0)
+);
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1188" height="148" alt="image" src="https://github.com/user-attachments/assets/65e6c4a3-5adb-4d8c-815d-599b3e6e6394" />
+
 
 
 ## RESULT
